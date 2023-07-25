@@ -1,0 +1,130 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" media="(min-width: 640px)" href="all_pc.css">
+<link rel="stylesheet" media="(max-width: 640px)" href="all_smp.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<link href="flexslider.css" rel="stylesheet">
+<script src="jquery.flexslider-min.js"></script>
+<script>
+  $(function(){
+    $('.flexslider').flexslider({
+      animation: "slide"
+    });
+  });
+</script>
+
+
+
+</head>
+
+<body style="background-image:url(bg050.gif);">
+	<div class="topnav">
+    	    <div class="topnavde"><a href="index.html"><b>Home</b></a></div>
+			<div class="topnavde"><a href="js1.html"><b>Famous place</b></a></div>
+			<div class="topnavde"><a href="js2.html"><b>Shop</b></a></div>
+			<div class="topnavde"><a href="js3.html"><b>JS World</b></a></div>
+			<div class="topnavde"><a href="js4.html"><b>Form</b></a></div>
+			<div class="topnavde"><a href="js5.html"><b>Map</b></a></div>
+			<div class="topnavde"><a href="js6.html"><b>Anima</b></a></div>
+    </div>
+    
+<div id="pagebody" style="height: 1200px;">
+	<header>
+	<div class="flexslider" style="border-color:#F0F8FF;">
+      <ul class="slides">
+        <li><img src="img/1.jpg" /></li>
+        <li><img src="img/2.jpg" /></li>
+        <li><img src="img/3.jpg" /></li>
+        <li><img src="img/4.jpg" /></li>
+        <li><img src="img/5.jpg" /></li>
+        <li><img src="img/6.jpg" /></li>
+        <li><img src="img/7.jpg" /></li>
+        <li><img src="img/8.jpg" /></li>
+      </ul>
+    </div>
+
+   
+	</header>
+    <h3><u> Traveling place in kyoto</u></h3>
+    <script>
+        var students =[["Fushimi Inari Shrine",60086 ],["Kinkaku-Ji",43636],["Ryoanji Temple", 54],["Arashiyama Bamboo Grove",4464]];
+        var showstr ="";
+        var showGradeStr = "";
+        var showSortStr = "";
+        var grade = [];
+        var totalScore = 0;
+        
+        for(var i=0;i<students.length;i++){
+            for(var j=0;j<students[i].length;j++){
+                showstr += students[i][j];
+                showstr +=" ";
+                
+                // check student score 
+                if (students[i][j] >= 4000 ){
+                    grade.push(students[i]);
+                    document.write("<br> <br>"); 
+        
+                }
+                
+                
+            }
+            showstr +="<br/>";
+            totalScore = totalScore + students[i][1];
+        }
+        
+        document.write(" <br>");
+        
+        // printing all students
+        document.write(showstr); 
+        document.write("<br> <br>");
+        for(var i=0;i<grade.length;i++){
+            for(var j=0;j<grade[i].length;j++){
+                showGradeStr += grade[i][j];
+                showGradeStr +=" ";		
+            }
+            showGradeStr +="<br/>";
+        }
+    
+        
+        // printing students scores is more than 90
+     document.write("<b><u>Best place of travel in kyoto </u><br><br></b>");
+        document.write(showGradeStr);
+        
+        document.write("<br>");
+        
+        // printing total score
+        document.write("<b><u>Total score is</u><br><br></b> " + totalScore);
+        
+        document.write("<br>");
+        
+        // printing average
+        document.write("<b><u>The average score is </u><br><br></b>" + totalScore / students.length);
+        
+        document.write("<br>");
+        
+        // ptinting in descending order
+        students.sort(function(a, b) {
+            return b[1] - a[1];
+        });
+        for(var i=0;i<students.length;i++){
+            for(var j=0;j<students[i].length;j++){
+                showSortStr += students[i][j];
+                showSortStr +=" ";			
+            }
+            showSortStr +="<br/>";
+        }
+        
+        document.write("<br>");
+        
+        document.write("<b><u>Sort scores in descending order </u><br><br></b><br>");
+        
+        document.write(showSortStr);
+        
+        </script>
+        <footer>Copyright (C) 2023s copyrights. KCGI.All Rights Reserved.</footer>
+    
+    </body>
+    </html>	

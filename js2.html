@@ -1,0 +1,176 @@
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" media="(min-width: 640px)" href="all_pc.css">
+	<link rel="stylesheet" media="(max-width: 640px)" href="all_smp.css">
+	<style>
+		.item {
+		display: inline-block;
+		margin: 5px;
+		cursor: pointer;
+		}
+
+		.item img {
+		width: 150px;
+		height: 150px;
+	   
+		}
+
+		.big-picture {
+		display: none;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 9999;
+		}
+
+		.big-picture img {
+		width: 300px;
+		height: 300px;
+		}
+
+		.item :hover {
+		  transform: scale(1.15)
+		}
+
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<link href="flexslider.css" rel="stylesheet">
+	<script src="jquery.flexslider-min.js"></script>
+	<script>
+	  $(function(){
+		$('.flexslider').flexslider({
+		  animation: "slide"
+		});
+	  });
+	</script>
+	
+	
+	</head>
+    <body style="background-color:#D0E7E2;">
+       
+		<div class="topnav">
+			<div class="topnavde"><a href="index.html"><b>Home</b></a></div>
+				<div class="topnavde"><a href="js1.html"><b>Famous place</b></a></div>
+				<div class="topnavde"><a href="js2.html"><b>Shop</b></a></div>
+				<div class="topnavde"><a href="js3.html"><b>JS World</b></a></div>
+				<div class="topnavde"><a href="js4.html"><b>Form</b></a></div>
+				<div class="topnavde"><a href="js5.html"><b>Map</b></a></div>
+				<div class="topnavde"><a href="js6.html"><b>Anima</b></a></div>
+		</div>
+		<div id="pagebody" style="height: 1200px;">
+			<header>
+			<div class="flexslider" style="border-color:#F0F8FF;">
+			  <ul class="slides">
+				<li><img src="img/1.jpg" /></li>
+				<li><img src="img/2.jpg" /></li>
+				<li><img src="img/3.jpg" /></li>
+				<li><img src="img/4.jpg" /></li>
+				<li><img src="img/5.jpg" /></li>
+				<li><img src="img/6.jpg" /></li>
+				<li><img src="img/7.jpg" /></li>
+				<li><img src="img/8.jpg" /></li>
+			  </ul>
+			</div>
+		
+		   
+			</header>
+			<table >
+				<colgroup>
+				  <col span="2" style="background-color: #446464">
+				  
+				</colgroup>
+			  
+			  <h1> <center> Kyoto Famous Item Store </center> </h1>
+			  <h3>New Arrivels</h3>
+			  <tr>
+				<td>
+				  <div class="item" onclick="showBigPicture('item1')">
+				  <img src="https://i.ebayimg.com/images/g/iy8AAOSwv1FkKs2O/s-l1600.jpg" alt="Item 1">
+				  </div>
+				</td>
+				<td>
+				  <div class="item" onclick="showBigPicture('item2')">
+				  <img src="https://i.ebayimg.com/images/g/YU8AAOSwHF1f4kRu/s-l500.jpg" alt="Item 2">
+				  </div>
+				</td>
+			  <td>
+				 <!-- Big picture window -->
+			  <div class="big-picture" id="bigPicture">
+				<img id="bigPictureImage" src alt="Big Picture">
+			  </div>
+			  </td>
+			  </tr>
+			  <tr>
+				<td>
+				  <div class="item" onclick="showBigPicture('item3')">
+				  <img src="https://i.ebayimg.com/images/g/iBoAAOSwtDhhDWor/s-l1600.jpg" alt="Item 3">
+				  </div>
+				</td>
+				<td>
+				  <div class="item" onclick="showBigPicture('item4')">
+				  <img src="https://i.ebayimg.com/images/g/7SYAAOSwA~VaLE63/s-l1600.jpg" alt="Item 4">
+				  </div>
+				</td>
+			 
+			  </tr>
+			  <tr>
+				<td>
+				  <div class="item" onclick="showBigPicture('item5')">
+				  <img src="https://i.ebayimg.com/images/g/M08AAOSw8OlkepJd/s-l500.jpg" alt="Item 5">
+				  </div>
+				</td>
+				<td>
+				  <div class="item" onclick="showBigPicture('item6')">
+				  <img src="https://i.ebayimg.com/images/g/7ZkAAOSw0ZFg2DZM/s-l500.jpg" alt="Item 6">
+				  </div>
+				</td>
+			 
+			  </tr>
+					
+			  
+			  </table>
+			  
+			  <script>
+				function showBigPicture(itemId) {
+				  // Get the corresponding small image source
+				  var smallImageSrc = '';
+				  switch (itemId) {
+					case 'item1':
+					  smallImageSrc = "https://i.ebayimg.com/images/g/iy8AAOSwv1FkKs2O/s-l1600.jpg";
+					  break;
+					case 'item2':
+					  smallImageSrc = 'https://i.ebayimg.com/images/g/YU8AAOSwHF1f4kRu/s-l500.jpg';
+					  break;
+					  case 'item3':
+					  smallImageSrc = 'https://i.ebayimg.com/images/g/iBoAAOSwtDhhDWor/s-l1600.jpg';
+					  break;
+					case 'item4':
+					  smallImageSrc = 'https://i.ebayimg.com/images/g/7SYAAOSwA~VaLE63/s-l1600.jpg';
+					  break;
+					  case 'item5':
+					  smallImageSrc = 'https://i.ebayimg.com/images/g/M08AAOSw8OlkepJd/s-l500.jpg';
+					  break;
+					case 'item6':
+					  smallImageSrc = 'https://i.ebayimg.com/images/g/7ZkAAOSw0ZFg2DZM/s-l500.jpg';
+					  break;
+				   
+					
+					// Add more cases for other items if needed
+				  }
+		  
+				  // Set the big picture image source and display the window
+				  var bigPicture = document.getElementById('bigPicture');
+				  var bigPictureImage = document.getElementById('bigPictureImage');
+				  bigPictureImage.src = smallImageSrc.replace('-small', '-big'); // Assuming big image has '-big' suffix
+				  bigPicture.style.display = 'block';
+				}
+			  </script>
+        <footer>Copyright (C) 2023s copyrights. KCGI.All Rights Reserved.</footer>
+    
+     	
+			</body>
+		  </html>
+		  

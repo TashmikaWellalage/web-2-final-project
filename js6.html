@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" media="(min-width: 640px)" href="all_pc.css">
+  <link rel="stylesheet" media="(max-width: 640px)" href="all_smp.css">
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <link href="flexslider.css" rel="stylesheet">
+  <script src="jquery.flexslider-min.js"></script>
+  <script>
+    $(function(){
+      $('.flexslider').flexslider({
+        animation: "slide"
+      });
+    });
+
+    let imgLeftStart = 0;
+    let imgLeftEnd = 1000;
+    let imgLeft = imgLeftStart;
+    let imgTop = 100;
+    const moveStep = 10;
+    const moveSpeed = 100;
+
+    function moveImgX() {
+      const imgElement = document.getElementById("img2");
+      imgElement.style.top = imgTop + "px";
+      imgElement.style.left = imgLeft + "px";
+
+      if (imgLeftEnd - imgLeftStart > 0) {
+        imgLeft += moveStep;
+        if (imgLeft > imgLeftEnd) {
+          imgLeft = imgLeftStart;
+        }
+      } else {
+        imgLeft -= moveStep;
+        if (imgLeft < imgLeftEnd) {
+          imgLeft = imgLeftStart;
+        }
+      }
+      setTimeout(moveImgX, moveSpeed);
+    }
+  </script>
+</head>
+
+<body style="background-color:#D0E7E2;">
+  <div class="topnav">
+    <div class="topnavde"><a href="index.html"><b>Home</b></a></div>
+    <div class="topnavde"><a href="js1.html"><b>Famous place</b></a></div>
+    <div class="topnavde"><a href="js2.html"><b>Shop</b></a></div>
+    <div class="topnavde"><a href="js3.html"><b>JS World</b></a></div>
+    <div class="topnavde"><a href="js4.html"><b>Form</b></a></div>
+    <div class="topnavde"><a href="js5.html"><b>Map</b></a></div>
+    <div class="topnavde"><a href="js6.html"><b>Anim</b></a></div>
+  </div>
+  <div id="pagebody" style="height: 1200px;">
+    <header>
+      <div class="flexslider" style="border-color:#F0F8FF;">
+        <ul class="slides">
+          <li><img src="img/1.jpg" /></li>
+          <li><img src="img/2.jpg" /></li>
+          <li><img src="img/3.jpg" /></li>
+          <li><img src="img/4.jpg" /></li>
+          <li><img src="img/5.jpg" /></li>
+          <li><img src="img/6.jpg" /></li>
+          <li><img src="img/7.jpg" /></li>
+          <li><img src="img/8.jpg" /></li>
+        </ul>
+      </div>
+      <h1 style="text-align: center;">Speed Public transport method</h1>
+      <!-- <img src="img1.gif" width="300" height="300" id="img1" style="position:absolute;"> -->
+    </header>
+</div>
+
+<img src="https://grapee.jp/en/wp-content/uploads/15796_1.gif" width="300" height="300" id="img2" style="position:relative;">
+<script>
+	// Call the function to start the animation after the document is loaded
+    document.addEventListener("DOMContentLoaded", moveImgX);
+	</script>
+</body>
+</html>

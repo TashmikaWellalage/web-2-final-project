@@ -1,0 +1,105 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" media="(min-width: 640px)" href="all_pc.css">
+<link rel="stylesheet" media="(max-width: 640px)" href="all_smp.css">
+<style>
+  #mymap{
+   align-content: center;
+   width : 700px;
+   height: 600px;
+  }
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<link href="flexslider.css" rel="stylesheet">
+<script src="jquery.flexslider-min.js"></script>
+<script>
+  $(function(){
+    $('.flexslider').flexslider({
+      animation: "slide"
+    });
+  });
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp">
+    
+</script>
+
+<script>
+  function initialize(){
+     var opt = {
+      zoom:10,
+      center:new google.maps.LatLng(35.098312,135.3891961),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+     };
+     var mm=document.getElementById("mymap");
+     map=new google.maps.Map(mm, opt);
+    
+     var marker1 = new google.maps.Marker({position: new google.maps.LatLng(35.03937,135.7292431),
+      map: map,
+      title: "Kinkaku-ji"
+   })
+      
+      var marker2 = new google.maps.Marker({position: new google.maps.LatLng(34.9671402,135.7726717),
+      map: map,
+      title: "Fushimi Inari Taisha"
+  })
+  var marker3 = new google.maps.Marker({position: new google.maps.LatLng(35.009449,135.666773),
+      map: map,
+      title: "Arashiyama"
+  })
+  var info1= new google.maps.InfoWindow({content:"Kinkaku-ji"})
+
+  var info2 = new google.maps.InfoWindow({content:"Fushimi Inari Taisha"})
+  var info3 = new google.maps.InfoWindow({content:"Arashiyama"})
+
+  google.maps.event.addListener(marker1, "click",function(){info1.open(map, marker1);});
+  google.maps.event.addListener(marker2, "click",function(){info2.open(map, marker2);});
+  google.maps.event.addListener(marker3, "click",function(){info3.open(map, marker3);});
+
+
+
+  }
+  google.maps.event.addDomListener(window,"load",initialize);
+
+</script>
+
+
+
+</head>
+
+<body style="background-color:#D0E7E2;">
+	<div class="topnav">
+    	    <div class="topnavde"><a href="index.html"><b>Home</b></a></div>
+			<div class="topnavde"><a href="js1.html"><b>Famous place</b></a></div>
+			<div class="topnavde"><a href="js2.html"><b>Shop</b></a></div>
+			<div class="topnavde"><a href="js3.html"><b>JS World</b></a></div>
+			<div class="topnavde"><a href="js4.html"><b>Form</b></a></div>
+			<div class="topnavde"><a href="js5.html"><b>Map</b></a></div>
+			<div class="topnavde"><a href="js6.html"><b>Anima</b></a></div>
+    </div>
+    
+<div id="pagebody" style="height: 1200px;">
+	<header>
+	<div class="flexslider" style="border-color:#CFC;;">
+      <ul class="slides">
+        <li><img src="img/1.jpg" /></li>
+        <li><img src="img/2.jpg" /></li>
+        <li><img src="img/3.jpg" /></li>
+        <li><img src="img/4.jpg" /></li>
+        <li><img src="img/5.jpg" /></li>
+        <li><img src="img/6.jpg" /></li>
+        <li><img src="img/7.jpg" /></li>
+        <li><img src="img/8.jpg" /></li>
+      </ul>
+    </div>
+	</header>
+    <h3>Famous place in google map</h3>
+  <div id = "mymap"></div>
+    
+  <footer>Copyright (C) 2023s copyrights. KCGI.All Rights Reserved.</footer>
+    
+</body>
+</html>	
+   
+
